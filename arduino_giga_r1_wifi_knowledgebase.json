@@ -1,0 +1,693 @@
+{
+  "board": {
+    "name": "Arduino GIGA R1 WiFi",
+    "sku": "ABX00063",
+    "form_factor": "Arduino Mega",
+    "manufacturer": "Arduino S.r.l.",
+    "product_page": "https://docs.arduino.cc/hardware/giga-r1-wifi/",
+    "datasheet_url": "https://docs.arduino.cc/resources/datasheets/ABX00063-datasheet.pdf",
+    "schematics_url": "https://docs.arduino.cc/resources/schematics/ABX00063-schematics.pdf",
+    "pinout_url": "https://docs.arduino.cc/resources/pinouts/ABX00063-full-pinout.pdf",
+    "store_url": "https://store.arduino.cc/giga-r1-wifi",
+    "target_applications": [
+      "3D Printing",
+      "Signal Processing",
+      "Audio Processing",
+      "Data Acquisition",
+      "Robotics",
+      "Machine Learning at the Edge",
+      "IoT"
+    ]
+  },
+  "microcontroller": {
+    "part_number": "STM32H747XIH6",
+    "manufacturer": "STMicroelectronics",
+    "datasheet": "https://docs.arduino.cc/resources/datasheets/stm32h747xi.pdf",
+    "architecture": "32-bit ARMv7E-M",
+    "rtos": "Mbed OS",
+    "cores": [
+      {
+        "name": "Cortex-M7",
+        "max_frequency_mhz": 480,
+        "fpu": "Double-precision",
+        "dsp": true,
+        "mpu": true,
+        "l1_cache": true,
+        "icache_kb": 16,
+        "dcache_kb": 16
+      },
+      {
+        "name": "Cortex-M4",
+        "max_frequency_mhz": 240,
+        "fpu": "Single-precision",
+        "dsp": true,
+        "mpu": true,
+        "l1_cache": false
+      }
+    ],
+    "dual_core": {
+      "intercore_communication": "Remote Procedure Call (RPC)",
+      "independent_programming": true,
+      "simultaneous_operation": true,
+      "micropython_on_m4": true,
+      "arduino_on_m7": true
+    },
+    "internal_memory": {
+      "flash_mb": 2,
+      "flash_config": "Dual-bank (2 x 1 MB)",
+      "total_sram_kb": 1024,
+      "itcm_ram_kb": 64,
+      "dtcm_ram_kb": 128,
+      "axi_sram_kb": 512,
+      "sram1_kb": 128,
+      "sram2_kb": 128,
+      "sram3_kb": 32,
+      "sram4_kb": 64,
+      "backup_sram_kb": 4
+    },
+    "operating_voltage_v": {
+      "min": 1.62,
+      "max": 3.6
+    },
+    "temperature_range_c": {
+      "min": -40,
+      "max": 85
+    },
+    "clock_sources": {
+      "hsi_mhz": 64,
+      "hsi48_mhz": 48,
+      "csi_mhz": 4,
+      "lsi_khz": 32,
+      "hse_range_mhz": "4-48 (crystal) or 4-50 (ext source)",
+      "lse_khz": 32.768,
+      "plls": 3
+    },
+    "power_domains": [
+      {
+        "name": "D1",
+        "components": "Cortex-M7, AXI SRAM, LTDC, DMA2D, MDMA, JPEG codec, FMC, QUADSPI, Flash"
+      },
+      {
+        "name": "D2",
+        "components": "Cortex-M4, DMA1/2, UART, SPI, I2C, USB, Ethernet, SDMMC, CAN, SRAM1-3"
+      },
+      {
+        "name": "D3",
+        "components": "BDMA, LPUART, LPTIM, I2C4, SPI6, SRAM4, RTC, RCC"
+      }
+    ],
+    "low_power_modes": [
+      "CSleep",
+      "CStop",
+      "DStop",
+      "Stop",
+      "DStandby",
+      "Standby"
+    ]
+  },
+  "external_memory": [
+    {
+      "type": "NOR Flash (QSPI)",
+      "part_number": "AT25SF128A-MHB-T",
+      "reference": "U8",
+      "size_mb": 16,
+      "interface": "Quad-SPI",
+      "filesystem_support": ["FATFS", "littleFS"],
+      "usb_mass_storage": true
+    },
+    {
+      "type": "SDRAM",
+      "part_number": "AS4C4M16SA",
+      "reference": "U3",
+      "size_mb": 8,
+      "frequency_mhz": 166,
+      "arduino_library": "SDRAM"
+    }
+  ],
+  "wireless": {
+    "module": "Murata LBEE5KL1DX-883",
+    "reference": "U5",
+    "chipset": "Cypress CYW4343W",
+    "wifi": {
+      "standard": "IEEE 802.11 b/g/n",
+      "max_rate_mbps": 65,
+      "frequency_ghz": 2.4,
+      "channels": 40,
+      "modes": ["AP", "STA", "Simultaneous AP/STA"],
+      "arduino_library": "WiFi"
+    },
+    "bluetooth": {
+      "classic": true,
+      "ble": true,
+      "ble_version_cordio": "5.X",
+      "ble_version_arduino_stack": "4.2",
+      "arduino_library": "ArduinoBLE"
+    },
+    "antenna": {
+      "type": "External (Micro UFL connector)",
+      "connector_reference": "J14",
+      "included_in_box": true,
+      "antenna_manufacturer": "Molex",
+      "antenna_model": "206994-0100",
+      "antenna_type": "FPC Antenna",
+      "gain_dbi": 3.60
+    }
+  },
+  "security": {
+    "secure_element": {
+      "part_number": "ATECC608A-MAHDA-T",
+      "reference": "U4",
+      "features": ["Hardware crypto", "Secure key storage", "TLS", "Arduino Cloud authentication"]
+    }
+  },
+  "gpio": {
+    "total_digital_io": 76,
+    "analog_input_pins": 12,
+    "pwm_pins": 13,
+    "dac_pins": 2,
+    "logic_level_v": 3.3,
+    "max_dc_current_per_pin_ma": 8,
+    "all_gpio_support_interrupts": true,
+    "interrupt_modes": ["LOW", "CHANGE", "RISING", "FALLING"]
+  },
+  "pins": {
+    "digital": [
+      {"pin": "D0", "function": "RX0", "description": "UART0 Receive", "pwm": false},
+      {"pin": "D1", "function": "TX0", "description": "UART0 Transmit", "pwm": false},
+      {"pin": "D2", "function": "PWM", "description": "PWM, Digital I/O", "pwm": true},
+      {"pin": "D3", "function": "PWM", "description": "PWM, Digital I/O", "pwm": true},
+      {"pin": "D4", "function": "PWM", "description": "PWM, Digital I/O", "pwm": true},
+      {"pin": "D5", "function": "PWM", "description": "PWM, Digital I/O", "pwm": true},
+      {"pin": "D6", "function": "PWM", "description": "PWM, Digital I/O", "pwm": true},
+      {"pin": "D7", "function": "PWM", "description": "PWM, Digital I/O. NOTE: defaults to ~1.65V output, set LOW explicitly", "pwm": true},
+      {"pin": "D8", "function": "PWM/SCL2", "description": "PWM, Digital I/O, I2C bus 2 clock", "pwm": true},
+      {"pin": "D9", "function": "PWM/SDA2", "description": "PWM, Digital I/O, I2C bus 2 data", "pwm": true},
+      {"pin": "D10", "function": "PWM/CS", "description": "PWM, Digital I/O, SPI5 chip select", "pwm": true},
+      {"pin": "D11", "function": "PWM/COPI", "description": "PWM, Digital I/O, SPI5 controller out", "pwm": true},
+      {"pin": "D12", "function": "PWM/CIPO", "description": "PWM, Digital I/O, SPI5 controller in", "pwm": true},
+      {"pin": "D13", "function": "PWM/SCK", "description": "PWM, Digital I/O, SPI5 clock", "pwm": true},
+      {"pin": "D14", "function": "TX3", "description": "UART3 Transmit", "pwm": false},
+      {"pin": "D15", "function": "RX3", "description": "UART3 Receive", "pwm": false},
+      {"pin": "D16", "function": "TX2", "description": "UART2 Transmit", "pwm": false},
+      {"pin": "D17", "function": "RX2", "description": "UART2 Receive", "pwm": false},
+      {"pin": "D18", "function": "TX1", "description": "UART1 Transmit", "pwm": false},
+      {"pin": "D19", "function": "RX1", "description": "UART1 Receive", "pwm": false},
+      {"pin": "D20", "function": "SDA", "description": "I2C bus 0 data", "pwm": false},
+      {"pin": "D21", "function": "SCL", "description": "I2C bus 0 clock", "pwm": false},
+      {"pin": "D22-D75", "function": "GPIO", "description": "General-purpose digital I/O", "pwm": false}
+    ],
+    "analog": [
+      {"pin": "A0", "digital_alias": "D76", "function": "Analog In", "extra": "OPAMP1_VOUT, COMP1_INM", "gpio": true},
+      {"pin": "A1", "digital_alias": "D77", "function": "Analog In", "extra": "OPAMP1_VINM", "gpio": true},
+      {"pin": "A2", "digital_alias": "D78", "function": "Analog In", "extra": "OPAMP1_VINP, COMP1_INP", "gpio": true},
+      {"pin": "A3", "digital_alias": "D79", "function": "Analog In", "extra": "COMP1_INM", "gpio": true},
+      {"pin": "A4", "digital_alias": "D80", "function": "Analog In", "gpio": true},
+      {"pin": "A5", "digital_alias": "D81", "function": "Analog In", "gpio": true},
+      {"pin": "A6", "digital_alias": "D82", "function": "Analog In", "extra": "COMP1_INM", "gpio": true},
+      {"pin": "A7", "digital_alias": "D83", "function": "Analog In", "extra": "Audio jack microphone input", "gpio": true},
+      {"pin": "A8", "function": "Analog In only", "gpio": false},
+      {"pin": "A9", "function": "Analog In only", "gpio": false},
+      {"pin": "A10", "function": "Analog In only", "gpio": false},
+      {"pin": "A11", "function": "Analog In only", "gpio": false}
+    ],
+    "dac": [
+      {"pin": "A12", "digital_alias": "D84", "function": "DAC0", "description": "Analog output, Audio jack left channel"},
+      {"pin": "A13", "digital_alias": "D85", "function": "DAC1", "description": "Analog output, Audio jack right channel"}
+    ],
+    "special": [
+      {"pin": "D86", "function": "RGB Red LED", "gpio": false},
+      {"pin": "D87", "function": "RGB Green LED", "gpio": false},
+      {"pin": "D88", "function": "RGB Blue LED", "gpio": false},
+      {"pin": "D89", "function": "SPI1 CIPO", "description": "SPI header connector"},
+      {"pin": "D90", "function": "SPI1 COPI", "description": "SPI header connector"},
+      {"pin": "D91", "function": "SPI1 SCK", "description": "SPI header connector"},
+      {"pin": "D92", "function": "USB Host Enable", "gpio": false},
+      {"pin": "D93", "function": "CANRX", "description": "CAN bus receive"},
+      {"pin": "D94", "function": "CANTX", "description": "CAN bus transmit"},
+      {"pin": "OFF", "function": "Power control", "description": "Connect to GND to power off the board"},
+      {"pin": "VRTC", "function": "RTC battery", "description": "Connect coin cell battery for persistent RTC"},
+      {"pin": "IOREF", "function": "Logic reference", "voltage_v": 3.3},
+      {"pin": "AREF", "function": "Analog reference voltage"},
+      {"pin": "BOOT0 (PC_13)", "function": "DFU mode / readable in sketch", "read_code": "digitalRead(PC_13)"}
+    ],
+    "notes": {
+      "d7_default": "D7 defaults to ~1.65V output. Set LOW explicitly: pinMode(7, OUTPUT); digitalWrite(7, LOW);",
+      "led_builtin_inverted": "LED_BUILTIN logic is INVERTED: HIGH=off, LOW=on (opposite of UNO)"
+    }
+  },
+  "communication": {
+    "uart": {
+      "count": 4,
+      "usb_serial": true,
+      "ports": [
+        {"name": "Serial", "type": "USB", "tx": null, "rx": null},
+        {"name": "Serial1", "type": "UART0", "tx": "D1", "rx": "D0"},
+        {"name": "Serial2", "type": "UART1", "tx": "D18", "rx": "D19"},
+        {"name": "Serial3", "type": "UART2", "tx": "D16", "rx": "D17"},
+        {"name": "Serial4", "type": "UART3", "tx": "D14", "rx": "D15"}
+      ]
+    },
+    "i2c": {
+      "count": 3,
+      "buses": [
+        {"name": "Wire", "sda": "D20", "scl": "D21", "pullups": "internal"},
+        {"name": "Wire1", "sda": "camera connector", "scl": "camera connector", "pullups": "internal"},
+        {"name": "Wire2", "sda": "D9", "scl": "D8", "pullups": "external required"}
+      ]
+    },
+    "spi": {
+      "count": 2,
+      "buses": [
+        {
+          "arduino_object": "SPI",
+          "hardware_name": "SPI1",
+          "cipo": "D89",
+          "copi": "D90",
+          "sck": "D91",
+          "cs": "Any GPIO",
+          "location": "6-pin header (ICSP)",
+          "voltage_note": "Header provides 5V — check SPI device compatibility"
+        },
+        {
+          "arduino_object": "SPI1",
+          "hardware_name": "SPI5",
+          "cipo": "D12",
+          "copi": "D11",
+          "sck": "D13",
+          "cs": "D10",
+          "location": "Board pins",
+          "voltage_note": "3.3V logic"
+        }
+      ]
+    },
+    "can": {
+      "count": 1,
+      "rx_pin": "D93 (PB_5)",
+      "tx_pin": "D94 (PB_13)",
+      "transceiver_required": true,
+      "transceiver_voltage": "3.3V",
+      "library": "mbed CAN",
+      "code_init": "mbed::CAN can1(PB_5, PB_13);"
+    }
+  },
+  "adc": {
+    "adc_count": 3,
+    "resolution_options_bits": [8, 10, 12, 14, 16],
+    "default_resolution_bits": 16,
+    "reference_voltage_v": 3.3,
+    "max_sample_rate_msps": 3.6,
+    "channels_on_header": 12,
+    "non_gpio_analog_pins": ["A8", "A9", "A10", "A11"],
+    "advanced_library": "AdvancedAnalogRedux / AdvancedADC",
+    "code_basic": "int value = analogRead(A0);"
+  },
+  "dac": {
+    "channel_count": 2,
+    "pins": ["A12 (DAC0)", "A13 (DAC1)"],
+    "max_resolution_bits": 12,
+    "default_resolution_bits": 8,
+    "max_sample_rate_msps": 10,
+    "buffered_mode": true,
+    "sample_and_hold": true,
+    "advanced_library": "AdvancedAnalogRedux / AdvancedDAC",
+    "code_basic": "analogWrite(A12, 128);",
+    "code_set_resolution": "analogWriteResolution(12);"
+  },
+  "audio": {
+    "connector": "3.5mm audio jack (J15)",
+    "output_left": "DAC0 / A12",
+    "output_right": "DAC1 / A13",
+    "input_mic": "A7",
+    "onboard_amplifier": false,
+    "dac_resolution_bits": 12,
+    "max_sample_rate_msps": 10,
+    "notes": "No onboard amplifier. External amplifier recommended for speakers and microphones."
+  },
+  "usb": {
+    "device_port": {
+      "connector": "USB-C",
+      "reference": "J12",
+      "standard": "USB 2.0 (no SuperSpeed)",
+      "esd_protection": "TVS diode array (D2)",
+      "functions": ["Sketch upload", "Serial communication", "HID (keyboard/mouse emulation)"]
+    },
+    "host_port": {
+      "connector": "USB 2.0 Type-A",
+      "reference": "J2",
+      "esd_protection": "TVS diode array (D4)",
+      "functions": ["USB keyboard input", "USB mass storage read/write", "Data logging"]
+    }
+  },
+  "display": {
+    "interface": "MIPI DSI (2-lane)",
+    "controller": "LCD-TFT (LTDC)",
+    "max_resolution": "1024x768",
+    "graphics_accelerator": "Chrom-ART (DMA2D)",
+    "jpeg_codec": "Hardware JPEG encoder/decoder",
+    "layers": 2,
+    "dedicated_pins": ["D1N", "D1P", "CKN", "CKP", "D0N", "D0P"],
+    "gpio_capable_pins": ["D68", "D69", "D70", "D71", "D72", "D73", "D74", "D75"],
+    "power_pins": ["3.3V", "5V", "GND", "VIN"],
+    "compatible_shield": "Arduino GIGA Display Shield",
+    "frameworks": ["LVGL", "GFX"]
+  },
+  "camera": {
+    "connector": "20-pin Arducam compatible (J5/J6)",
+    "interface": "DCMI (8-14 bit parallel)",
+    "max_data_rate_mbps": 1120,
+    "pixel_clock_max_mhz": 80,
+    "formats": ["Monochrome", "Raw Bayer", "YCbCr 4:2:2", "RGB 565", "JPEG"],
+    "modes": ["Continuous", "Snapshot (single frame)"],
+    "guide_url": "https://docs.arduino.cc/tutorials/giga-r1-wifi/giga-camera"
+  },
+  "power": {
+    "circuit_voltage_v": 3.3,
+    "input_methods": [
+      {"method": "USB-C (J12)", "voltage_v": 5},
+      {"method": "USB-A (J2)", "voltage_v": 5},
+      {"method": "VIN pin", "min_v": 6, "typ_v": 7, "max_v": 32}
+    ],
+    "regulators": [
+      {"reference": "U7", "part": "MP2269GD-Z", "type": "Buck converter", "output_v": 5, "input_range": "VIN"},
+      {"reference": "U6", "part": "MP2322GQH", "type": "Buck converter", "output_v": 3.3, "input_range": "5V rail"}
+    ],
+    "off_pin": "Connect to GND to disable 3.3V regulator and power off board",
+    "vrtc_pin": "Connect coin cell battery for persistent RTC operation"
+  },
+  "timers": {
+    "high_resolution": [
+      {"name": "HRTIM1", "resolution": "16-bit", "channels": 10, "complementary": true, "max_clock_mhz": 480}
+    ],
+    "advanced_control": [
+      {"name": "TIM1", "resolution": "16-bit", "channels": 4, "complementary": true, "max_clock_mhz": 240},
+      {"name": "TIM8", "resolution": "16-bit", "channels": 4, "complementary": true, "max_clock_mhz": 240}
+    ],
+    "general_purpose": [
+      {"name": "TIM2", "resolution": "32-bit", "channels": 4, "max_clock_mhz": 240},
+      {"name": "TIM3", "resolution": "16-bit", "channels": 4, "max_clock_mhz": 240},
+      {"name": "TIM4", "resolution": "16-bit", "channels": 4, "max_clock_mhz": 240},
+      {"name": "TIM5", "resolution": "32-bit", "channels": 4, "max_clock_mhz": 240},
+      {"name": "TIM12", "resolution": "16-bit", "channels": 2, "max_clock_mhz": 240},
+      {"name": "TIM13", "resolution": "16-bit", "channels": 1, "max_clock_mhz": 240},
+      {"name": "TIM14", "resolution": "16-bit", "channels": 1, "max_clock_mhz": 240},
+      {"name": "TIM15", "resolution": "16-bit", "channels": 2, "max_clock_mhz": 240},
+      {"name": "TIM16", "resolution": "16-bit", "channels": 1, "max_clock_mhz": 240},
+      {"name": "TIM17", "resolution": "16-bit", "channels": 1, "max_clock_mhz": 240}
+    ],
+    "basic": [
+      {"name": "TIM6", "resolution": "16-bit", "channels": 0, "max_clock_mhz": 240},
+      {"name": "TIM7", "resolution": "16-bit", "channels": 0, "max_clock_mhz": 240}
+    ],
+    "low_power": [
+      {"name": "LPTIM1", "resolution": "16-bit", "max_clock_mhz": 240},
+      {"name": "LPTIM2", "resolution": "16-bit", "max_clock_mhz": 240},
+      {"name": "LPTIM3", "resolution": "16-bit", "max_clock_mhz": 240},
+      {"name": "LPTIM4", "resolution": "16-bit", "max_clock_mhz": 240},
+      {"name": "LPTIM5", "resolution": "16-bit", "max_clock_mhz": 240}
+    ],
+    "watchdogs": ["IWDG1", "IWDG2", "WWDG1", "WWDG2"],
+    "systick": true
+  },
+  "dma": [
+    {"name": "MDMA", "domain": "D1", "channels": 16, "features": "High-speed, linked-list, memory-to-memory"},
+    {"name": "DMA1", "domain": "D2", "features": "Dual-port, FIFO, request router"},
+    {"name": "DMA2", "domain": "D2", "features": "Dual-port, FIFO, request router"},
+    {"name": "BDMA", "domain": "D3", "features": "Basic DMA, request router"},
+    {"name": "DMA2D", "domain": "D1", "features": "Chrom-ART 2D graphics accelerator"}
+  ],
+  "additional_peripherals": {
+    "comparators": {"count": 2, "names": ["COMP1", "COMP2"], "type": "Ultra-low power, rail-to-rail"},
+    "opamps": {"count": 2, "names": ["OPAMP1", "OPAMP2"], "gains_non_inverting": [2, 4, 8, 16], "gains_inverting": [-1, -3, -7, -15], "gbw_mhz": 7.3},
+    "dfsdm": {"filters": 4, "channels": 8, "features": ["Sigma-Delta modulator interface", "PDM microphone support"]},
+    "temperature_sensor": {"connected_to": "ADC3_IN18", "range_c": "-40 to +125"},
+    "rng": "True random number generator (32-bit)",
+    "crc": "Programmable polynomial CRC calculation unit",
+    "jpeg_codec": "Hardware JPEG encoder/decoder",
+    "fmc": "Flexible Memory Controller (SRAM, NOR, NAND, SDRAM)",
+    "quadspi": "Quad-SPI memory interface, up to 256 MB mapped",
+    "ethernet_mac": "Available in MCU, no onboard PHY. Compatible with Arduino Ethernet Shield Rev2",
+    "rtc": {
+      "vrtc_pin": true,
+      "battery_backed": true,
+      "ntp_sync": true
+    }
+  },
+  "mcu_communication_peripherals": {
+    "usart": 4,
+    "uart": 4,
+    "lpuart": 1,
+    "spi": 6,
+    "i2s": 3,
+    "sai": 4,
+    "i2c": 4,
+    "sdmmc": 2,
+    "usb_otg_fs": 1,
+    "usb_otg_hs": 1,
+    "fdcan": 1,
+    "tt_fdcan": 1,
+    "ethernet_mac": 1,
+    "spdif_rx": 1,
+    "swpmi": 1,
+    "hdmi_cec": 1
+  },
+  "board_components": [
+    {"reference": "U1", "part": "STM32H747XIH6", "description": "Dual-core microcontroller"},
+    {"reference": "U3", "part": "AS4C4M16SA", "description": "8 MB SDRAM"},
+    {"reference": "U4", "part": "ATECC608A-MAHDA-T", "description": "Secure element"},
+    {"reference": "U5", "part": "LBEE5KL1DX-883", "description": "Wi-Fi/Bluetooth module (Murata 1DX)"},
+    {"reference": "U6", "part": "MP2322GQH", "description": "3.3V buck converter"},
+    {"reference": "U7", "part": "MP2269GD-Z", "description": "5V buck converter"},
+    {"reference": "U8", "part": "AT25SF128A-MHB-T", "description": "16 MB QSPI NOR Flash"},
+    {"reference": "J2", "part": "USB 2.0 Type-A", "description": "USB Host connector"},
+    {"reference": "J12", "part": "CX90B-16P USB-C", "description": "Programming/Device connector"},
+    {"reference": "J14", "part": "Micro UFL", "description": "Antenna connector"},
+    {"reference": "J15", "part": "3.5mm jack", "description": "Audio in/out"},
+    {"reference": "J5/J6", "part": "Camera connector", "description": "20-pin Arducam compatible"},
+    {"reference": "PB1", "part": "Reset button", "description": "Hardware reset"},
+    {"reference": "PB2", "part": "BOOT0 button", "description": "DFU mode entry"},
+    {"reference": "DL1", "part": "Power LED", "description": "Indicates power on"},
+    {"reference": "DL2", "part": "SMLP34RGB2W3", "description": "RGB LED (common anode)"},
+    {"reference": "JTAG", "part": "2x5 pin header", "description": "JTAG debug connector"}
+  ],
+  "software": {
+    "board_package": "Arduino Mbed OS GIGA Board Package",
+    "platform": "Mbed OS",
+    "ide_support": ["Arduino IDE 1.8.x", "Arduino IDE 2.x", "Arduino Cloud Editor"],
+    "install_instructions": "Board Manager → search 'GIGA' → install",
+    "languages": ["Arduino C/C++", "MicroPython"],
+    "crash_behavior": {
+      "description": "MbedOS crash causes red LED to blink (4 fast + 4 slow), board does NOT auto-reset",
+      "recovery": ["Press reset once to restart sketch", "Double-tap reset for bootloader mode"]
+    },
+    "bootloader_mode": "Double-tap reset button right after power-up",
+    "dfu_mode": "Hold BOOT0 button during power-on"
+  },
+  "key_libraries": [
+    {"name": "WiFi", "purpose": "Wi-Fi connectivity", "included_in_core": true},
+    {"name": "ArduinoBLE", "purpose": "Bluetooth Low Energy"},
+    {"name": "Wire", "purpose": "I2C communication", "included_in_core": true},
+    {"name": "SPI", "purpose": "SPI communication", "included_in_core": true},
+    {"name": "SDRAM", "purpose": "Access 8 MB external SDRAM"},
+    {"name": "AdvancedAnalogRedux", "purpose": "Advanced ADC/DAC features"},
+    {"name": "AdvancedADC", "purpose": "High-performance ADC"},
+    {"name": "AdvancedDAC", "purpose": "High-performance DAC"},
+    {"name": "CAN (mbed)", "purpose": "CAN bus communication"},
+    {"name": "USBHost", "purpose": "USB host keyboard/mass storage"},
+    {"name": "USBHID", "purpose": "USB HID keyboard/mouse emulation"},
+    {"name": "Camera", "purpose": "Arducam camera interface"}
+  ],
+  "code_examples": {
+    "blink": "void setup() { pinMode(LED_BUILTIN, OUTPUT); }\nvoid loop() { digitalWrite(LED_BUILTIN, LOW); delay(1000); digitalWrite(LED_BUILTIN, HIGH); delay(1000); }",
+    "analog_read": "void setup() { Serial.begin(9600); }\nvoid loop() { int val = analogRead(A0); Serial.println(val); delay(100); }",
+    "dac_write": "void setup() { analogWriteResolution(12); }\nvoid loop() { analogWrite(A12, 2048); }",
+    "serial_uart": "void setup() { Serial.begin(9600); Serial1.begin(9600); }\nvoid loop() { if(Serial1.available()) { Serial.write(Serial1.read()); } }",
+    "i2c_scan": "#include <Wire.h>\nvoid setup() { Serial.begin(9600); Wire.begin(); }\nvoid loop() { for(int i=1;i<127;i++) { Wire.beginTransmission(i); if(Wire.endTransmission()==0) { Serial.print(\"Found: 0x\"); Serial.println(i,HEX); } } delay(5000); }",
+    "wifi_connect": "#include <WiFi.h>\nchar ssid[]=\"SSID\"; char pass[]=\"PASS\";\nvoid setup() { Serial.begin(9600); while(WiFi.status()!=WL_CONNECTED) { WiFi.begin(ssid,pass); delay(10000); } Serial.println(WiFi.localIP()); }",
+    "sdram_usage": "#include \"SDRAM.h\"\nvoid setup() { SDRAM.begin(); uint8_t* arr=(uint8_t*)SDRAM.malloc(7*1024*1024); for(int i=0;i<128;i++) arr[i]=i; SDRAM.free(arr); }",
+    "can_bus": "#include \"CAN.h\"\nmbed::CAN can1(PB_5,PB_13);\nvoid setup() { Serial.begin(115200); can1.frequency(1000000); }\nvoid loop() { uint8_t c=0; can1.write(mbed::CANMessage(1337,&c,1)); delay(1000); }",
+    "interrupt": "volatile byte state=LOW;\nvoid setup() { pinMode(13,OUTPUT); pinMode(2,INPUT_PULLUP); attachInterrupt(digitalPinToInterrupt(2),blink,CHANGE); }\nvoid loop() { digitalWrite(13,state); }\nvoid blink() { state=!state; }",
+    "boot0_read": "void setup() { Serial.begin(9600); }\nvoid loop() { Serial.println(digitalRead(PC_13)); delay(100); }"
+  },
+  "recommended_operating_conditions": {
+    "vin_v": {"min": 6.0, "typ": 7.0, "max": 32.0},
+    "vusb_v": {"min": 4.8, "typ": 5.0, "max": 5.5},
+    "logic_level_vdd_v": 3.3,
+    "vih": "0.7*VDD to VDD",
+    "vil": "0 to 0.3*VDD",
+    "operating_temperature_c": {"min": -40, "typ": 25, "max": 85},
+    "note": "VDD controls digital logic level and is tied to 3.3V rail; VAREF is analog reference domain."
+  },
+  "boot_and_recovery": {
+    "normal_upload": "Built-in USB bootloader allows flashing through USB-C.",
+    "bootloader_entry": "Double-tap reset immediately after power-up to force bootloader mode.",
+    "dfu_entry": "Hold BOOT0 button during power-on to enter DFU mode.",
+    "hard_lockup_recovery": [
+      "Press RESET once to restart sketch",
+      "If still unreachable over USB, double-tap RESET",
+      "If bootloader itself needs low-level recovery, use BOOT0 during power-on"
+    ],
+    "crash_led_pattern": "Mbed OS crash pattern: red LED blinks 4 fast + 4 slow; no auto-reset."
+  },
+  "driver_development": {
+    "scope": "Board-level + MCU-level details for implementing low-level drivers directly on STM32H747XIH6 as used by Arduino GIGA R1 WiFi.",
+    "source_of_truth_priority": [
+      "1) stm32h747xx CMSIS device header for register layout, IRQ names, base addresses",
+      "2) RM0399 reference manual for peripheral behavior and programming sequences",
+      "3) ABX00063 board datasheet/pinout/schematics for board wiring and constraints"
+    ],
+    "memory_map_key_addresses": {
+      "d1_itcmram_base": "0x00000000",
+      "d1_dtcmram_base": "0x20000000",
+      "flash_bank1_base": "0x08000000",
+      "flash_bank2_base": "0x08100000",
+      "flash_end": "0x081FFFFF",
+      "d1_axisram_base": "0x24000000",
+      "d2_ahbsram_base": "0x30000000",
+      "d3_sram_base": "0x38000000",
+      "d3_bkpsram_base": "0x38800000",
+      "qspi_xip_base": "0x90000000",
+      "uid_base": "0x1FF1E800",
+      "flashsize_base": "0x1FF1E880"
+    },
+    "peripheral_base_addresses_key": {
+      "rcc": "0x58024400",
+      "pwr": "0x58024800",
+      "flash_regs": "0x52002000",
+      "gpio_port_block": "GPIOA starts at 0x58020000, +0x400 per port",
+      "dma1": "0x40020000",
+      "dma2": "0x40020400",
+      "bdma": "0x58025400",
+      "mdma": "0x52000000",
+      "dmamux1": "0x40020800",
+      "dmamux2": "0x58025800",
+      "i2c1": "0x40005400",
+      "i2c2": "0x40005800",
+      "i2c3": "0x40005C00",
+      "i2c4": "0x58001C00",
+      "spi1": "0x40013000",
+      "spi5": "0x40015000",
+      "usart1": "0x40011000",
+      "usart2": "0x40004400",
+      "usart3": "0x40004800",
+      "uart4": "0x40004C00",
+      "fdcan1": "0x4000A000",
+      "usb1_otg_hs": "0x40040000",
+      "usb2_otg_fs": "0x40080000",
+      "dcmi": "0x48020000",
+      "ltdc": "0x50001000",
+      "dsi": "0x50000000",
+      "quadspi_ctrl": "0x52005000",
+      "fmc": "0x52004000",
+      "hsem": "0x58026400"
+    },
+    "irqs_most_relevant_for_board_drivers": {
+      "external_gpio": ["EXTI0_IRQn", "EXTI1_IRQn", "EXTI2_IRQn", "EXTI3_IRQn", "EXTI4_IRQn", "EXTI9_5_IRQn", "EXTI15_10_IRQn"],
+      "dma": ["DMA1_Stream0_IRQn", "DMA1_Stream1_IRQn", "DMA1_Stream2_IRQn", "DMA1_Stream3_IRQn", "DMA1_Stream4_IRQn", "DMA1_Stream5_IRQn", "DMA1_Stream6_IRQn", "DMA1_Stream7_IRQn", "DMA2_Stream0_IRQn", "DMA2_Stream1_IRQn", "DMA2_Stream2_IRQn", "DMA2_Stream3_IRQn", "DMA2_Stream4_IRQn", "DMA2_Stream5_IRQn", "DMA2_Stream6_IRQn", "DMA2_Stream7_IRQn", "BDMA_Channel0_IRQn", "BDMA_Channel1_IRQn", "BDMA_Channel2_IRQn", "BDMA_Channel3_IRQn", "BDMA_Channel4_IRQn", "BDMA_Channel5_IRQn", "BDMA_Channel6_IRQn", "BDMA_Channel7_IRQn", "MDMA_IRQn", "DMAMUX1_OVR_IRQn", "DMAMUX2_OVR_IRQn"],
+      "serial": ["USART1_IRQn", "USART2_IRQn", "USART3_IRQn", "UART4_IRQn", "USART6_IRQn", "UART7_IRQn", "UART8_IRQn", "LPUART1_IRQn"],
+      "i2c": ["I2C1_EV_IRQn", "I2C1_ER_IRQn", "I2C2_EV_IRQn", "I2C2_ER_IRQn", "I2C3_EV_IRQn", "I2C3_ER_IRQn", "I2C4_EV_IRQn", "I2C4_ER_IRQn"],
+      "spi": ["SPI1_IRQn", "SPI2_IRQn", "SPI3_IRQn", "SPI4_IRQn", "SPI5_IRQn", "SPI6_IRQn"],
+      "can": ["FDCAN1_IT0_IRQn", "FDCAN1_IT1_IRQn", "FDCAN_CAL_IRQn"],
+      "usb": ["OTG_HS_EP1_OUT_IRQn", "OTG_HS_EP1_IN_IRQn", "OTG_HS_WKUP_IRQn", "OTG_HS_IRQn", "OTG_FS_EP1_OUT_IRQn", "OTG_FS_EP1_IN_IRQn", "OTG_FS_WKUP_IRQn", "OTG_FS_IRQn"],
+      "display_camera": ["LTDC_IRQn", "LTDC_ER_IRQn", "DSI_IRQn", "DCMI_IRQn", "DMA2D_IRQn", "JPEG_IRQn"],
+      "adc_dac_audio": ["ADC_IRQn", "ADC3_IRQn", "TIM6_DAC_IRQn", "SAI1_IRQn", "SAI2_IRQn", "SAI3_IRQn", "SAI4_IRQn", "DFSDM1_FLT0_IRQn", "DFSDM1_FLT1_IRQn", "DFSDM1_FLT2_IRQn", "DFSDM1_FLT3_IRQn"],
+      "rtc_and_power": ["RTC_WKUP_IRQn", "RTC_Alarm_IRQn", "PVD_AVD_IRQn", "TAMP_STAMP_IRQn", "WAKEUP_PIN_IRQn"],
+      "multicore": ["CM7_SEV_IRQn", "CM4_SEV_IRQn", "HSEM1_IRQn", "HSEM2_IRQn"]
+    },
+    "cache_dma_coherency_rules": {
+      "cm7_has_data_cache": true,
+      "cm4_has_data_cache": false,
+      "rule_tx_dma": "If CM7 writes buffer then peripheral DMA reads it, clean D-cache for that range before enabling DMA.",
+      "rule_rx_dma": "If peripheral DMA writes buffer then CM7 reads it, invalidate D-cache for that range after DMA completes.",
+      "alignment_note": "Use cache-line aligned buffers (32-byte typical on Cortex-M7) to avoid collateral invalidate/clean issues.",
+      "safe_memory_preference": "Place heavy DMA buffers in non-cacheable memory regions or configure MPU attributes explicitly."
+    },
+    "multicore_ipc_and_sharing": {
+      "dual_core": true,
+      "cores": ["Cortex-M7", "Cortex-M4"],
+      "hsem_available": true,
+      "rpc_available_in_arduino_stack": true,
+      "shared_memory_recommendation": "Use explicit ownership protocol for shared SRAM blocks and synchronize through HSEM or RPC. Avoid unsynchronized read-modify-write across cores.",
+      "interrupt_routing_note": "EXTI and many peripherals have CPU-specific mask/pending registers (C1/C2 variants)."
+    },
+    "clock_and_reset_bringup_checklist": [
+      "Enable peripheral bus clock in RCC AHBxENR/APBxENR for target domain",
+      "De-assert peripheral reset in RCC AHBxRSTR/APBxRSTR if previously held",
+      "Configure kernel clock source in D1CCIPR/D2CCIP1R/D2CCIP2R/D3CCIPR where required",
+      "Program GPIO MODER/OTYPER/OSPEEDR/PUPDR/AFR before enabling peripheral data path",
+      "Clear pending interrupt flags before enabling NVIC lines",
+      "For DMA paths, configure DMAMUX request mapping before enabling DMA stream/channel"
+    ],
+    "board_level_hardware_constraints": {
+      "gpio_logic_v": 3.3,
+      "gpio_5v_tolerance_policy": "Do not assume 5V tolerance on board header GPIOs; level-shift external interfaces when needed.",
+      "max_dc_current_per_pin_ma": 8,
+      "wire2_pullups_required": true,
+      "spi_header_voltage_warning": "The ICSP header includes 5V rail availability; verify target device I/O voltage compatibility.",
+      "can_transceiver_required": true,
+      "can_transceiver_voltage": "3.3V",
+      "audio_amp_required": true,
+      "d7_default_behavior": "D7 can default near mid-level output (~1.65V) unless driven explicitly LOW in setup.",
+      "led_builtin_inverted_logic": true
+    },
+    "flash_programming_geometry": {
+      "total_flash_bytes": 2097152,
+      "bank_count": 2,
+      "bank_size_bytes": 1048576,
+      "sector_count_total": 8,
+      "sector_size_bytes": 131072,
+      "flash_word_program_granularity_bits": 256,
+      "flash_word_program_granularity_bytes": 32,
+      "notes": [
+        "Operate via FLASH_CR1/CR2, FLASH_SR1/SR2, FLASH_CCR1/CCR2 register sets",
+        "Handle ECC and error flags explicitly before/after program and erase operations",
+        "Honor bank/sector alignment and cache coherency when executing from flash"
+      ]
+    },
+    "full_register_catalog": {
+      "companion_file": "arduino_giga_r1_wifi_registers.json",
+      "description": "Auto-generated from stm32h747xx.h CMSIS device header. Contains 232 peripheral instances, 2358 register entries with offsets, and 6906 bitfield definitions with bit positions, masks, and descriptions.",
+      "contents": [
+        "memory_base_addresses — all resolved base addresses for SRAM, Flash, QSPI, peripherals",
+        "peripheral_instances — per-instance register map (name, offset, description) plus bitfields",
+        "additional_bitfields — standalone bitfield groups not tied to a specific instance"
+      ],
+      "usage_note": "Load this companion file when implementing any low-level peripheral driver. Each peripheral entry contains its base address, full register list with offsets, and every bitfield with position/mask/description."
+    }
+  },
+  "certifications": [
+    "FCC (DSS)",
+    "FCC (DTS)",
+    "CE (RED)",
+    "IC (ISED)",
+    "RCM (Australia)",
+    "UKCA (United Kingdom)",
+    "MIC (Japan)",
+    "RoHS 2 Directive 2011/65/EU",
+    "RoHS 3 Directive 2015/863/EU",
+    "REACH (EC) 1907/2006"
+  ],
+  "resources": {
+    "product_page": "https://docs.arduino.cc/hardware/giga-r1-wifi/",
+    "user_manual": "https://docs.arduino.cc/tutorials/giga-r1-wifi/cheat-sheet",
+    "getting_started": "https://docs.arduino.cc/tutorials/giga-r1-wifi/giga-getting-started",
+    "audio_guide": "https://docs.arduino.cc/tutorials/giga-r1-wifi/giga-audio",
+    "dual_core_guide": "https://docs.arduino.cc/tutorials/giga-r1-wifi/giga-dual-core",
+    "camera_guide": "https://docs.arduino.cc/tutorials/giga-r1-wifi/giga-camera",
+    "usb_guide": "https://docs.arduino.cc/tutorials/giga-r1-wifi/giga-usb",
+    "micropython": "https://docs.arduino.cc/micropython/basics/board-installation",
+    "datasheet_pdf": "https://docs.arduino.cc/resources/datasheets/ABX00063-datasheet.pdf",
+    "pinout_pdf": "https://docs.arduino.cc/resources/pinouts/ABX00063-full-pinout.pdf",
+    "schematics_pdf": "https://docs.arduino.cc/resources/schematics/ABX00063-schematics.pdf",
+    "stm32_datasheet": "https://docs.arduino.cc/resources/datasheets/stm32h747xi.pdf",
+    "stm32_reference_manual_rm0399_pdf": "https://www.st.com/resource/en/reference_manual/dm00176879.pdf",
+    "stm32_cmsis_device_header": "https://raw.githubusercontent.com/STMicroelectronics/cmsis_device_h7/master/Include/stm32h747xx.h",
+    "stm32_system_startup_header": "https://raw.githubusercontent.com/STMicroelectronics/cmsis_device_h7/master/Include/system_stm32h7xx.h",
+    "stm32_errata": "https://www.st.com/resource/en/errata_sheet/es0392-stm32h745755-and-stm32h747757-line-limitations-stmicroelectronics.pdf",
+    "stm32_bootloader_appnote_an2606": "https://www.st.com/resource/en/application_note/cd00167594.pdf",
+    "stm32h747_hal_ll_repo": "https://github.com/STMicroelectronics/STM32CubeH7",
+    "arduino_cloud": "https://create.arduino.cc/iot/",
+    "forum": "https://forum.arduino.cc/c/hardware/giga-r1/182",
+    "store": "https://store.arduino.cc/giga-r1-wifi",
+    "github": "https://github.com/arduino/docs-content"
+  }
+}
