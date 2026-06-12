@@ -1,2 +1,2 @@
 # arduino_mega
-developing on my arduino mega board
+Arduino Mega, knowledge base for AI agents.
